@@ -18,10 +18,10 @@
   <link rel="shortcut icon" type="image/x-icon" href="#">
 
 	<!-- Link to Bootstrap -->
-  <link href='css/bootstrap.min.css' rel='stylesheet'>
+  <link href = "{{ url_for('static', 'css', filename='bootstrap.min.css') }}" rel='stylesheet'>
 
 	<!-- linking CSS-->
-	<link rel="stylesheet" type="text/css "href="templates/override_css/index.css">
+	<link rel="stylesheet" type="text/css "href="override_css/index.css">
 
 	<!-- jquery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
   <!-- link to Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet" rel="stylesheet">
 
   <!-- CSS animations -->
   <link rel="stylesheet" href="css3-animate-it-master/css/animations.css">
@@ -71,9 +71,9 @@
     <div class="container_head">
       <div class="jumbotron_head" id="lead">
           <h1 class="hometitle">Name of App</h1>
-          <p class="lead">Let us plan your journey from Anywhere to Anywhere.<br>Get access to everything going on at your destination!</p>
+          <p class="lead">Let us plan your journey from Anywhere to Anywhere!</p>
           <p class="lead">
-            <a class="btn btn-primary btn-lg mainbutton" href="#selectlanguage" role="button">Let's Go!</a>
+            <a class="btn btn-primary btn-lg mainbutton" href="#letsgo" role="button">Let's Go!</a>
           </p>
         </div>
       </div>
