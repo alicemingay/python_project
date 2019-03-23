@@ -14,32 +14,33 @@ def index():
 
 @app.route("/journey", methods=["POST"])
 def journey():
-    form_data = request.form["startLocation"]
-    form_data = request.form["destination"]
-    response = journey(startLocation, destination)
+    startLocation = request.form["startLocation"]
+    destination = request.form["destination"]
+    response = getRoute(startLocation, destination)
     return 1
 
 @app.route("/results", methods=["GET"])
-def getRoute():
+def getRoute(startLocation, destination):
     endpoint = "http://free.rome2rio.com/api/1.4/json/Search"
     # journey(startLocation, destination)
     payload = {"key": R2R_API, "oName": startLocation, "dName": destination}
     response = requests.get(endpoint, params=payload)
     data = response.json()
+    print data
 #    getRoute = data['main']['temp']
     return render_template("results.html", data=data)
 
-@app.route("/email", methods=["POST"])
-def email_results():
-    "#" = requests.post( #what do I call this?
-        "https://api.mailgun.net/v3/" + MAILGUN_DOMAIN_NAME + "/messages",
-        auth=("api", MAILGUN_API),
-        data={"from": "Destination ? <mailgun@"+ MAILGUN_DOMAIN_NAME +">",
-              "to": ["email"], #how do I set this to raw input?
-              "subject": "Destination ? Search Results",
-              "text": "##"}) #same q as above - need to pull information from previous function
-    response = "Email successfully sent to {}".format(text)
-    return render_template("results.html", response=response)
+#@app.route("/email", methods=["POST"])
+#def email_results():
+#    "#" = requests.post( #what do I call this?
+#        "https://api.mailgun.net/v3/" + MAILGUN_DOMAIN_NAME + "/messages",
+#        auth=("api", MAILGUN_API),
+#        data={"from": "Destination ? <mailgun@"+ MAILGUN_DOMAIN_NAME +">",
+#              "to": ["email"], #how do I set this to raw input?
+#              "subject": "Destination ? Search Results",
+#              "text": "##"}) #same q as above - need to pull information from previous function
+#    response = "Email successfully sent to {}".format(text)
+#    return render_template("results.html", response=response)
 
 #json/Search?key=&oName=Bern&dName=Zurich&noRideshare
 

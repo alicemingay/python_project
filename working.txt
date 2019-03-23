@@ -7,3 +7,11 @@ def getRoute(startLocation, destination):
 #    getRoute = data['main']['temp']
     return data
 print(getRoute("london", "paris"))
+
+<section>
+#    {% for route in data %}
+  <ul>
+      <li>{{ .route }}</li>
+    </ul>
+  {% endfor %}
+  </section>

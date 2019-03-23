@@ -53,13 +53,7 @@
 <!--Main Text-->
 <div class="search-results">
   <h1>Results of your search</h1>
-  <section>
-    {% for Route in data %}
-      <ul>
-        <li>{{ Route.text }}</li>
-      </ul>
-    {% endfor %}
-    </section>
+    {% data %}
 </div>
 
 <!--Email Results-->
