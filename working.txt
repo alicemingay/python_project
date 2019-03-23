@@ -1,0 +1,9 @@
+@app.route("/results", methods=["GET"])
+def getRoute(startLocation, destination):
+    endpoint = "http://free.rome2rio.com/api/1.4/json/Search"
+    payload = {"key": R2R_API, "oName": startLocation, "dName": destination}
+    response = requests.get(endpoint, params=payload)
+    data = response.json()
+#    getRoute = data['main']['temp']
+    return data
+print(getRoute("london", "paris"))

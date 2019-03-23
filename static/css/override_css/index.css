@@ -14,13 +14,14 @@
 
 .nav-item{
   color: #264653;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .navigation {
   width: 100%;
 }
 
-.navigation ul {
+.navigation ul{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -32,11 +33,10 @@
 }
 
 .navigation li a {
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   font-weight: bold;
-  text-transform: uppercase;
   text-decoration: none;
-  color: white;
+  color: #493843;
   padding: 10px 0;
 }
 
@@ -60,8 +60,7 @@ li.about-us {
 
 /* --- Main Area Styles --- */
 .full-page-containter {
-  background-image: url('../../images/trees.jpg');
-  background-size: cover;
+  background-image: url('../static/images/trees.png');
 }
 
 .container {
@@ -78,7 +77,8 @@ li.about-us {
   width: 100%;
   text-align: center;
   font-size: 6rem;
-  color: white;
+  color: #493843;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 
 .home-title {
@@ -94,7 +94,7 @@ li.about-us {
 
 .form-container {
   height: 125px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #EDC9B7;
   box-shadow: 2px 2px 30px #756d64;
 }
 
@@ -138,10 +138,11 @@ form .search-button:hover {
 }
 
 .container p {
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: 1.3rem;
-  color: white;
+  color: #493843;
   font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .form-container, input[type="text"], form .search-button {
@@ -150,16 +151,15 @@ form .search-button:hover {
 
 footer {
   height: 150px;
-  background-color: #241e19;
+  background-color: #493843;
 }
 
 div.links {
-  width: 100%;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
-footer h2, footer p, footer a {
+footer h2, footer p, footer a{
   color: white;
   text-align: center;
 }

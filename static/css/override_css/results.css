@@ -1,0 +1,100 @@
+body{
+  color: black;
+}
+
+/* nav bar */
+.jumbotron {
+    background-color: transparent;
+}
+
+.nav-item{
+  color: #264653;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navigation {
+  width: 100%;
+}
+
+.navigation ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.navigation li {
+  list-style: none;
+  padding: 25px;
+}
+
+.navigation li a {
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #493843;
+  padding: 10px 0;
+}
+
+.navigation a:hover {
+  color: #e8811f;
+  border-bottom: 3px solid #ef7f15;
+  cursor: pointer;
+}
+
+.navigation .nav-logo{
+  flex-grow: 1;
+  justify-content: flex-start;
+  padding-left: 30px;
+  font-weight: bold;
+
+}
+
+li.about-us {
+  margin-right: 25px;
+}
+
+/*body*/
+h1{
+  color: #493843;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+}
+
+h3{
+  color: #493843;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+}
+
+form{
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+/*footer*/
+footer {
+  height: 150px;
+  background-color: #493843;
+  margin-top: 325px;
+}
+
+div.links {
+  text-align: center;
+  margin-top: 25px;
+}
+
+footer h2, footer p, footer a{
+  color: white;
+  text-align: center;
+}
+
+footer h2 {
+  padding-top: 30px;
+}
+
+footer a {
+   padding: 0 15px;
+   font-size: 1.1rem;
+   letter-spacing: 1px;
+}
