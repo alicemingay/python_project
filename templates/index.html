@@ -2,47 +2,17 @@
 <html lang="en">
 
 <head>
-  <!-- Specifies the character set for the webpage -->
-  <meta charset="utf-8">
-	<!-- Meta viewport tag for responsive design -->
-  <meta name="viewport" content="width=device-width, inital-scale=1">
-  <!-- Description of the website -->
-  <meta name="description" content="Get Anywhere from Anywhere">
-  <!-- Title of the website page goes here -->
   <title>Destination ?</title>
-  <!-- Shortcut icon -->
-  <link rel="shortcut icon" type="image/x-icon" href="../static/images/shortcut_icon.png" />
-  <!-- Link to Bootstrap -->
-  <link href="../static/css/lib/bootstrap.min.css" rel='stylesheet'>
-  <!-- linking CSS-->
-	<link rel="stylesheet" type="text/css" href="../static/css/override_css/index.css">
-	<!-- jquery -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <!-- Link to Google Font-->
-  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans" rel="stylesheet">
-
-</head>
-
-<body>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, inital-scale=1">
   <meta name="description" content="Get Anywhere from Anywhere">
-  <title>Destination ?</title>
-  <link href = "{{ url_for('static', 'css', filename='bootstrap.min.css') }}" rel='stylesheet'>
+  
   <link rel="stylesheet" type="text/css "href="../static/css/override_css/index.css">
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
 <body>
@@ -70,15 +40,15 @@
   </header>
   <!-- App body -->
   <div class="container">
-    <h1 class="home-title">Destination:?</h1>
+    <h1 class="home-title">Destination: ?</h1>
     <div class="form-container">
-      <form method="GET" action="/journey">
-        <input type="text" class="from-input"placeholder="From">
-        <input type="text" class="where-input" placeholder="To">
-        <button type="button" class="search-button" >let's go</button>
+      <form action="/journey" method="post">
+        <input type="text" class="from-input" name="startLocation" placeholder="From">
+        <input type="text" class="where-input" name="destination" placeholder="To">
+        <button type="submit" class="search-button" href="./results.html">let's go</button>
       </form>
     </div>
-      <p class="lead">Let us plan your journey from Anywhere to Anywhere!</p>
+    <p class="lead">Let us plan your journey from Anywhere to Anywhere!</p>
   </div>
   <footer>
     <h2>Find us elsewhere:</h2>
