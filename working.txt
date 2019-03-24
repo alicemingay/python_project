@@ -15,3 +15,8 @@ print(getRoute("london", "paris"))
     </ul>
   {% endfor %}
   </section>
+
+
+  <section method="get" action="/results" class="R2R_data">
+    {% results.data %}
+  </section>
