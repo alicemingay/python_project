@@ -4,32 +4,23 @@
 <head>
   <!-- Specifies the character set for the webpage -->
   <meta charset="utf-8">
-
 	<!-- Meta viewport tag for responsive design -->
   <meta name="viewport" content="width=device-width, inital-scale=1">
-
   <!-- Description of the website -->
   <meta name="description" content="Get Anywhere from Anywhere">
-
   <!-- Title of the website page goes here -->
   <title>Destination ?</title>
-
   <!-- Shortcut icon -->
   <link rel="shortcut icon" type="image/x-icon" href="../static/images/shortcut_icon.png" />
-
   <!-- Link to Bootstrap -->
   <link href="../static/css/lib/bootstrap.min.css" rel='stylesheet'>
-
   <!-- linking CSS-->
 	<link rel="stylesheet" type="text/css" href="../static/css/override_css/index.css">
-
 	<!-- jquery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/bootstrap.min.js"></script>
-
   <!-- Link to Google Font-->
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans" rel="stylesheet">
-
 
 </head>
 
@@ -81,10 +72,17 @@
   <div class="container">
     <h1 class="home-title">Destination:?</h1>
     <div class="form-container">
-      <form method="GET" action="/results">
+<<<<<<< HEAD
+      <form method="GET" action="/journey">
         <input type="text" class="from-input"placeholder="From">
         <input type="text" class="where-input" placeholder="To">
         <button type="button" class="search-button" >let's go</button>
+=======
+      <form method="post" action="/journey">
+        <input type="text" class="from-input" name="startLocation" placeholder="From">
+        <input type="text" class="where-input" name="destination" placeholder="To">
+        <button type="submit" class="btn btn-default" href="./results.html">Let's Go!</button>
+>>>>>>> e7320cff3f692e9d8c6769a78a3328df2fe45738
       </form>
     </div>
       <p class="lead">Let us plan your journey from Anywhere to Anywhere!</p>

@@ -17,18 +17,22 @@ def journey():
     startLocation = request.form["startLocation"]
     destination = request.form["destination"]
     response = getRoute(startLocation, destination)
-    return 1
+    return response
 
 @app.route("/results", methods=["GET"])
 def getRoute(startLocation, destination):
     endpoint = "http://free.rome2rio.com/api/1.4/json/Search"
-    # journey(startLocation, destination)
     payload = {"key": R2R_API, "oName": startLocation, "dName": destination}
-    response = requests.get(endpoint, params=payload)
-    data = response.json()
-    print data
+    r = requests.get(endpoint, params=payload).json()
+
+    R2R_categories = {
+    "place" : r["places"][9]["shortName"],
+    }
+
+    print R2R_categories
+#    print data
 #    getRoute = data['main']['temp']
-    return render_template("results.html", data=data)
+    return render_template("results.html", R2R_categories=R2R_categories)
 
 #@app.route("/email", methods=["POST"])
 #def email_results():

@@ -53,7 +53,9 @@
 <!--Main Text-->
 <div class="search-results">
   <h1>Results of your search</h1>
-    {% data %}
+    <section method="get" action="/results">
+      <p>Startpoint: {{ R2R_categories.place }}</p>
+    </section>
 </div>
 
 <!--Email Results-->
