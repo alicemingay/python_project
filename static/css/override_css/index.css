@@ -14,14 +14,13 @@
 
 .nav-item{
   color: #264653;
-  font-family: 'Open Sans', sans-serif;
 }
 
 .navigation {
   width: 100%;
 }
 
-.navigation ul{
+.navigation ul {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -33,10 +32,11 @@
 }
 
 .navigation li a {
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   font-weight: bold;
+  text-transform: uppercase;
   text-decoration: none;
-  color: #493843;
+  color: white;
   padding: 10px 0;
 }
 
@@ -54,13 +54,11 @@ a:hover {
 
 }
 
-li.about-us {
-  margin-right: 25px;
-}
 
 /* --- Main Area Styles --- */
 .full-page-containter {
-  background-image: url('../static/images/trees.png');
+  background-image: url('../../images/trees.png');
+  background-size: cover;
 }
 
 .container {
@@ -77,8 +75,7 @@ li.about-us {
   width: 100%;
   text-align: center;
   font-size: 6rem;
-  color: #493843;
-  font-family: 'Gloria Hallelujah', cursive;
+  color: white;
 }
 
 .home-title {
@@ -94,7 +91,7 @@ li.about-us {
 
 .form-container {
   height: 125px;
-  background-color: #EDC9B7;
+  background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 2px 2px 30px #756d64;
 }
 
@@ -138,11 +135,10 @@ form .search-button:hover {
 }
 
 .container p {
-  margin-top: 20px;
+  margin-top: 15px;
   font-size: 1.3rem;
-  color: #493843;
+  color: white;
   font-weight: bold;
-  font-family: 'Open Sans', sans-serif;
 }
 
 .form-container, input[type="text"], form .search-button {
@@ -151,15 +147,16 @@ form .search-button:hover {
 
 footer {
   height: 150px;
-  background-color: #493843;
+  background-color: #241e19;
 }
 
 div.links {
+  width: 100%;
   text-align: center;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
-footer h2, footer p, footer a{
+footer h2, footer p, footer a {
   color: white;
   text-align: center;
 }
