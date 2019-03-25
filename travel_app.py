@@ -29,23 +29,18 @@ def getRoute(startLocation, destination):
     "place" : r["places"][9]["shortName"],
     }
 
-    print R2R_categories
-#    print data
-#    getRoute = data['main']['temp']
     return render_template("results.html", R2R_categories=R2R_categories)
 
 #@app.route("/email", methods=["POST"])
-#def email_results():
-#    "#" = requests.post( #what do I call this?
-#        "https://api.mailgun.net/v3/" + MAILGUN_DOMAIN_NAME + "/messages",
-#        auth=("api", MAILGUN_API),
-#        data={"from": "Destination ? <mailgun@"+ MAILGUN_DOMAIN_NAME +">",
-#              "to": ["email"], #how do I set this to raw input?
-#              "subject": "Destination ? Search Results",
-#              "text": "##"}) #same q as above - need to pull information from previous function
-#    response = "Email successfully sent to {}".format(text)
-#    return render_template("results.html", response=response)
-
-#json/Search?key=&oName=Bern&dName=Zurich&noRideshare
+#def send_email():
+#        weblink = "https://api.mailgun.net/v3/" + MAILGUN_DOMAIN_NAME + "/messages"
+#        auth=("api", MAILGUN_API)
+#        data = {"from": "Excited User <mailgun@"+ MAILGUN_DOMAIN_NAME +">",
+#               "to": ["alice.mingay@gmail.com"],
+#               "subject": "Hello",
+#               "text": "Testing some Mailgun awesomness!"}
+#        response = requests.post(weblink, auth, data)
+#        message = "Your email was successfully sent to the address"
+#        return render_template("results.html", message=message)
 
 app.run(debug=True)

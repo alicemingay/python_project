@@ -12,13 +12,10 @@
   <meta name="description" content="Get Anywhere from Anywhere">
 
   <!-- Title of the website page goes here -->
-  <title>Destination ?: Your Route</title>
+  <title>Destination ? Your Route</title>
 
   <!-- Shortcut icon -->
   <link rel="shortcut icon" type="image/x-icon" href="../static/images/shortcut_icon.png" />
-
-  <!-- Link to Bootstrap -->
-  <link href="../static/css/lib/bootstrap.min.css" rel='stylesheet'>
 
   <!-- linking CSS-->
   <link rel="stylesheet" type="text/css "href="../static/css/override_css/results.css">
@@ -61,9 +58,14 @@
 <!--Email Results-->
 <div class="email-results">
   <h3>Email this to yourself:</h3>
-  <form>
+  <form method="post" action="/email">
     <input type="email" id="email" name="email" required="required" placeholder="Email Address">
     <input type="submit" value="Submit" id="submit-button">
+      {% if message %}
+        <ul>
+          <li>{{ message }}</li>
+        </ul>
+      {% endif %}
   </form>
 </div>
 
