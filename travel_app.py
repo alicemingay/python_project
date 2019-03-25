@@ -43,4 +43,8 @@ def getRoute(startLocation, destination):
 #        message = "Your email was successfully sent to the address"
 #        return render_template("results.html", message=message)
 
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
 app.run(debug=True)
