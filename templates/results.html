@@ -2,26 +2,15 @@
 <html lang="en">
 
 <head>
-  <!-- Specifies the character set for the webpage -->
   <meta charset="utf-8">
-
-  <!-- Meta viewport tag for responsive design -->
   <meta name="viewport" content="width=device-width, inital-scale=1">
 
-  <!-- Description of the website -->
   <meta name="description" content="Get Anywhere from Anywhere">
-
-  <!-- Title of the website page goes here -->
   <title>Destination ? Your Route</title>
-
-  <!-- Shortcut icon -->
-  <link rel="shortcut icon" type="image/x-icon" href="../static/images/shortcut_icon.png" />
-
-  <!-- linking CSS-->
+  <link rel="shortcut icon" type="image/x-icon" href="../static/images/d_question.png" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css "href="../static/css/override_css/results.css">
-
-  <!-- Link to Google Font-->
-  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 </head>
 
 <body>
@@ -32,7 +21,7 @@
       <div class="navigation">
         <ul class="nav navbar justify-content-end">
           <li class="nav-item">
-              <a class="nav-item nav-link" href="#" role="button">Home</a>
+              <a class="nav-item nav-link" href="/" role="button">Home</a>
                 </li>
           <li class="nav-item">
             <a class="nav-item nav-link" href="#" role="button">About</a>
@@ -41,7 +30,7 @@
               <a class="nav-item nav-link" href="#" role="button">Further Resources</a>
                 </li>
           <li class="nav-item">
-            <a class="nav-item nav-link" href="#" role="button">Get in Touch</a>
+            <a class="nav-item nav-link" href="/contact" role="button">Get in Touch</a>
               </li>
         </ul>
       </div>
@@ -51,7 +40,11 @@
 <div class="search-results">
   <h1>Results of your search</h1>
     <section method="get" action="/results">
-      <p>Startpoint: {{ R2R_categories.place }}</p>
+      <p>Startpoint: {{ R2R_categories.start_point }}</p>
+      <p>Endpoint: {{ R2R_categories.end_point }}</p>
+      <p>Route 1: {{ R2R_categories.route_0_name }} from {{ R2R_categories.route_0_arrPlace }} to {{ R2R_categories.route_0_depPlace }}</p>
+      <p>(Duration: {{ R2R_categories.route_0_totalDuration }} minutes)</p>
+      <p>Route 1: {{ R2R_categories.route_0_full }}</p>
     </section>
 </div>
 
@@ -72,11 +65,11 @@
 
 <!--Footer-->
 <footer>
-  <h2>LOGO</h2>
+  <h2>Find us on social media:</h2>
   <div class="links">
-      <a id="twitter" target="_blank" title="follow me on Twitter" href="https://twitter.com/FluencyLanguage"><img alt="follow me on twitter" src="https://c866088.ssl.cf3.rackcdn.com/assets/twitter40x40.png" border=0></a>
-      <a id="facebook" target="_blank" title="follow me on facebook" href="https://www.facebook.com/Language-Fluency-369848350491369/"><img alt="follow me on facebook" src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook40x40.png" border=0></a>
-      <a id="pinterest" target="_blank" title="follow me on pinterest" href="https://www.pinterest.com/PLACEHOLDER"><img alt="follow me on pinterest" src="https://c866088.ssl.cf3.rackcdn.com/assets/pinterest40x40.png" border=0></a>
+    <a href=#><img alt="follow me on twitter" src="https://c866088.ssl.cf3.rackcdn.com/assets/twitter40x40.png" border=0></a>
+    <a href=#><img alt="follow me on facebook" src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook40x40.png" border=0></a>
+    <a href=#><img alt="follow me on pinterest" src="https://c866088.ssl.cf3.rackcdn.com/assets/pinterest40x40.png" border=0></a>
   </div>
 </footer>
 

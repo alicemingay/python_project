@@ -15,3 +15,7 @@ print(getRoute("london", "paris"))
     </ul>
   {% endfor %}
   </section>
+
+
+  "route_0_lineNames" : r["routes"][0]["linesNames"],
+  "route_0_transitDuration" : r["routes"][0]["transitDuration"],
