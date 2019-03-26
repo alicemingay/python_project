@@ -25,6 +25,8 @@ def getRoute(startLocation, destination):
     payload = {"key": R2R_API, "oName": startLocation, "dName": destination}
     r = requests.get(endpoint, params=payload).json()
 
+    print r
+
     R2R_categories = {
     "start_point" : r["places"][0]["shortName"],
     "end_point" : r["places"][1]["shortName"],
@@ -33,6 +35,8 @@ def getRoute(startLocation, destination):
     "route_0_depPlace" : r["routes"][0]["depPlace"],
     "route_0_totalDuration" : r["routes"][0]["totalDuration"],
     "route_0_full" : r["routes"][0],
+    "route_1" : r["routes"][1],
+    "route_2" : r["routes"][2],
     }
 
     return render_template("results.html", R2R_categories=R2R_categories)
