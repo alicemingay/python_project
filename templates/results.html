@@ -45,17 +45,18 @@
       <p>Route 1: {{ R2R_categories.route_0_name }} from {{ R2R_categories.route_0_arrPlace }} to {{ R2R_categories.route_0_depPlace }}</p>
       <p>Duration: {{ R2R_categories.route_0_totalDuration }} minutes</p>
       <p>Distance: {{ R2R_categories.route_0_distance }}</p>
-      <p>Url: {{ R2R_categories.route_0_url }}</p>
+      <p>Booking link: {{ R2R_categories.route_0_url }}</p>
+      <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
         <br>
-      <p>Prices: {{ R2R_categories.route_0_currency }}{{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
       <p>Route 1: {{ R2R_categories.route_0_full }}</p>
 
+      {{ restaurant }}
     </section>
 </div>
 
 <!--Things to do-->
 <div class="things-to-do">
-  <h1>Things to do in {{ R2R_categories.end_point }}</h1>
+  <h1>Places to eat in {{ R2R_categories.end_point }}</h1>
     <div class="lastminute" method="get" action="/lastminute">
       <p></p>
     </div>
