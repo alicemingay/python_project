@@ -1,5 +1,6 @@
-# python_project
+# python_project - Destination ?
 
 Website to provide information on how to get anywhere from anywhere!
 
-We are going to use more than one API!
+Uses RometoRio, Zomato and Mailgun APIs to provide a user with information about their journey, restaurants around their destination and email them the results.
+
