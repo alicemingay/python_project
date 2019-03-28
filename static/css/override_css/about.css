@@ -1,0 +1,272 @@
+/* --- Reset Styles --- */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: verdana, sans-serif;
+}
+
+/* --- Navigation Styles */
+.jumbotron {
+    background-color: transparent;
+}
+
+.nav-item{
+  color: #264653;
+}
+
+.navigation {
+  width: 100%;
+  padding-bottom: 0;
+}
+
+.navigation ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.navigation li {
+  list-style: none;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 25px;
+}
+
+.navigation li a {
+  letter-spacing: 0.6px;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #264653;
+  padding: 10px 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+a:hover {
+  color: #e8811f;
+  border-bottom: 3px solid #ef7f15;
+  cursor: pointer;
+}
+
+/* --- Main Area Styles --- */
+
+  /*Page Title*/
+
+.full-page-container {
+  background-image: url('../../images/trees.png');
+  background-size: cover;
+}
+
+.container_about {
+    height: 90vh;
+    width: 85%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #about-title {
+    font-size: 8rem;
+    font-weight: bold;
+    color: #264653;
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: center;
+  }
+
+  #main_spacing{
+    width: 100%;
+    padding-top: 200px;
+    padding-bottom: 150px;
+    text-align: left;
+  }
+
+  /*about*/
+
+  /*Animation of the images*/
+    .animated {
+      position: relative;
+      width: 50%;
+    }
+
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: #FEE0C6;
+      border-radius: 50%;
+      }
+
+    .animated:hover .overlay {
+      opacity: 1;
+      }
+
+    .text {
+      color: #8B4513;
+      font-size: 40px;
+      font-family: 'Gloria Hallelujah', cursive;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+      }
+
+    /*end of animation*/
+
+    .bios {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      margin-top: -100px;
+      margin-bottom: 300px;
+    }
+
+    .team_container {
+      width: 240px;
+      height: 300px;
+      margin-bottom: 45px;
+      background-color: #FEE0C6;
+      display: inline-block;
+      position: relative;
+    }
+
+    p.info {
+      position: absolute;
+      top: 110%;
+      text-align: center;
+    }
+
+    .info strong {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: center;
+      position: relative;
+      top: -28px;
+      color: #8B0000;
+      mark: white;
+    }
+
+    /*images*/
+
+    .alice{
+      background-image: url("../../images/alice.jpg");
+      background-size: cover;
+      border-radius: 50%;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    .alice::after {
+      content: "";
+      width: 110%;
+      height: 2%;
+      position: absolute;
+      bottom: -14%;
+      right: -7%;
+      background-color: #92140C;
+    }
+
+    .rochelle {
+      background-image: url("../../images/rochelle.jpg");
+      background-size: cover;
+      border-radius: 50%;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+
+    .rochelle::after {
+      content: "";
+      width: 110%;
+      height: 2%;
+      position: absolute;
+      bottom: -14%;
+      right: -7%;
+      background-color: #264653;
+    }
+
+    .siobhan{
+      background-image: url("../../images/siobhan.jpg");
+      background-size: cover;
+      border-radius: 50%;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+
+    .siobhan::after {
+      content: "";
+      width: 110%;
+      height: 2%;
+      position: absolute;
+      bottom: -14%;
+      right: -7%;
+      background-color: #FFA630;
+    }
+
+    .karolina{
+      background-image: url("../../images/karolina.jpg");
+      background-size: cover;
+      border-radius: 50%;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    .karolina::after {
+      content: "";
+      width: 110%;
+      height: 2%;
+      position: absolute;
+      bottom: -14%;
+      right: -7%;
+      background-color: #F6D8AE;
+    }
+
+  /*footer*/
+
+  footer {
+    height: 150px;
+    background-color: #264653;
+  }
+
+  div.links {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  footer h2 {
+    color: white;
+    font-size: 2.2rem;
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    padding-top: 30px;
+  }
+
+  footer a {
+     padding: 0 15px;
+     font-size: 1.1rem;
+     letter-spacing: 1px;
+  }
