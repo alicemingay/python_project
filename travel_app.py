@@ -26,6 +26,22 @@ def getRoute(startLocation, destination):
     payload = {"key": R2R_API, "oName": startLocation, "dName": destination}
     r = requests.get(endpoint, params=payload).json()
 
+    latitude = r["places"][1]["lat"]
+    longitude = r["places"][1]["lng"]
+    zomatoInput = restaurants(latitude, longitude, r)
+
+    return zomatoInput
+
+def restaurants(latitude, longitude, r):
+    endpoint = "https://developers.zomato.com/api/v2.1/geocode?"
+    headers = {"Accept": "application/json", "user-key": ZOMATO_API}
+    params = {"lat": latitude, "lon": longitude}
+    req = requests.get(endpoint, headers=headers, params=params).json()
+
+    zomatoRestaurants = {
+    "option_0" : req["nearby_restaurants"][0],
+    }
+
     R2R_categories = {
     "start_point" : r["places"][0]["longName"],
     "end_point" : r["places"][1]["longName"],
@@ -35,23 +51,13 @@ def getRoute(startLocation, destination):
     "route_0_distance" : r["routes"][0]["distance"],
     "route_0_totalDuration" : r["routes"][0]["totalDuration"],
     "route_0_url" : r["routes"][0]["segments"][0]["agencies"][0]["links"][0]["url"],
-    "route_0_currency" : r["routes"][0]["indicativePrices"][0]["nativeCurrency"],
-    "route_0_PriceHigh" : r["routes"][0]["indicativePrices"][0]["nativePriceHigh"],
-    "route_0_PriceLow" : r["routes"][0]["indicativePrices"][0]["nativePriceLow"],
+#    "route_0_currency" : r["routes"][0]["indicativePrices"][0]["nativeCurrency"],
+#    "route_0_PriceHigh" : r["routes"][0]["indicativePrices"][0]["nativePriceHigh"],
+#    "route_0_PriceLow" : r["routes"][0]["indicativePrices"][0]["nativePriceLow"],
     "route_0_full" : r["routes"][0],
     }
 
-    latitude = r["places"][1]["lat"]
-    longitude = r["places"][1]["lng"]
-    place = "Dishoom"
-    restaurant = restaurants(place)
-
-    return render_template("results.html", R2R_categories=R2R_categories, restaurant=restaurant)
-
-def restaurants(destination):
-    restaurant = destination
-
-    return restaurant
+    return render_template("results.html", R2R_categories=R2R_categories, zomatoRestaurants=zomatoRestaurants)
 
 
 @app.route("/email", methods=["POST"])

@@ -49,8 +49,6 @@
       <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
         <br>
       <p>Route 1: {{ R2R_categories.route_0_full }}</p>
-
-      {{ restaurant }}
     </section>
 </div>
 
@@ -58,7 +56,8 @@
 <div class="things-to-do">
   <h1>Places to eat in {{ R2R_categories.end_point }}</h1>
     <div class="lastminute" method="get" action="/lastminute">
-      <p></p>
+      <p>{{ test }}</p>
+      <p>{{ zomatoRestaurants.option_0 }}
     </div>
 </div>
 
