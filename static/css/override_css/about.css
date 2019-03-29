@@ -6,6 +6,10 @@
   font-family: verdana, sans-serif;
 }
 
+body {
+  background-color: #FFF8F0;
+}
+
 /* --- Navigation Styles */
 .jumbotron {
     background-color: transparent;
@@ -54,11 +58,6 @@
 
 /*Page Title*/
 
-.full-page-container {
-  background-image: url('../../images/trees.png');
-  background-size: cover;
-}
-
 #main_spacing{
   height: 55rem;
   width: 100%;
@@ -98,7 +97,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 0;
+  margin-top: -100px;
 }
 
 /*about*/
