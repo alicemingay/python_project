@@ -45,13 +45,6 @@
   cursor: pointer;
 }
 
-.navigation .nav-logo{
-  flex-grow: 1;
-  justify-content: flex-start;
-  padding-left: 30px;
-  font-weight: bold;
-
-}
 
 li.about-us {
   margin-right: 25px;

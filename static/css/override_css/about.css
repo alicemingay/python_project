@@ -44,7 +44,7 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-a:hover {
+.navigation a:hover {
   color: #e8811f;
   border-bottom: 3px solid #ef7f15;
   cursor: pointer;
@@ -52,16 +52,38 @@ a:hover {
 
 /* --- Main Area Styles --- */
 
-  /*Page Title*/
+/*Page Title*/
 
 .full-page-container {
   background-image: url('../../images/trees.png');
   background-size: cover;
 }
 
+#main_spacing{
+  height: 55rem;
+  width: 100%;
+}
+
+#about-title {
+  font-size: 6rem;
+  color: #264653;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+}
+
+#main_spacing p{
+  font-weight: bold;
+  border: 2px solid red;
+  border-radius: 6px;
+  width: 50%;
+  text-align: center;
+}
+
 .container_about {
+    background-color: #FFF8F0;
+    background-size: cover;
     height: 90vh;
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -70,203 +92,192 @@ a:hover {
     flex-direction: column;
   }
 
-  #about-title {
-    font-size: 8rem;
-    font-weight: bold;
-    color: #264653;
-    font-family: 'Gloria Hallelujah', cursive;
-    text-align: center;
+.bios{
+  height: 35rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 0;
+}
+
+/*about*/
+
+/*Animation of the images*/
+.animated {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #FEE0C6;
+  border-radius: 50%;
   }
 
-  #main_spacing{
-    width: 100%;
-    padding-top: 200px;
-    padding-bottom: 150px;
-    text-align: left;
+.animated:hover .overlay {
+  opacity: 1;
   }
 
-  /*about*/
+.text {
+  color: #8B4513;
+  font-size: 32px;
+  font-family: 'Gloria Hallelujah', cursive;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  }
 
-  /*Animation of the images*/
-    .animated {
-      position: relative;
-      width: 50%;
-    }
+/*end of animation*/
 
-    .image {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+/*Team Container*/
+.team_container {
+  width: 240px;
+  height: 300px;
+  margin-bottom: 0;
+  background-color: #CDD7D6;
+  display: inline-block;
+  position: relative;
+}
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 0;
-      transition: .5s ease;
-      background-color: #FEE0C6;
-      border-radius: 50%;
-      }
+p.info {
+  position: absolute;
+  top: 110%;
+  text-align: center;
+}
 
-    .animated:hover .overlay {
-      opacity: 1;
-      }
+.info strong {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+  top: -28px;
+  color: #264653;
+  mark: white;
+}
 
-    .text {
-      color: #8B4513;
-      font-size: 40px;
-      font-family: 'Gloria Hallelujah', cursive;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center;
-      }
+/*images*/
 
-    /*end of animation*/
+.alice{
+  background-image: url("../../images/alice.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  margin-left: 40px;
+  margin-right: 40px;
+}
 
-    .bios {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      margin-top: -100px;
-      margin-bottom: 300px;
-    }
+.alice::after {
+  content: "";
+  width: 110%;
+  height: 2%;
+  position: absolute;
+  bottom: -14%;
+  right: -7%;
+  background-color: #264653;
+}
 
-    .team_container {
-      width: 240px;
-      height: 300px;
-      margin-bottom: 45px;
-      background-color: #FEE0C6;
-      display: inline-block;
-      position: relative;
-    }
-
-    p.info {
-      position: absolute;
-      top: 110%;
-      text-align: center;
-    }
-
-    .info strong {
-      display: block;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: bold;
-      font-size: 2rem;
-      text-align: center;
-      position: relative;
-      top: -28px;
-      color: #8B0000;
-      mark: white;
-    }
-
-    /*images*/
-
-    .alice{
-      background-image: url("../../images/alice.jpg");
-      background-size: cover;
-      border-radius: 50%;
-      margin-left: 50px;
-      margin-right: 50px;
-    }
-
-    .alice::after {
-      content: "";
-      width: 110%;
-      height: 2%;
-      position: absolute;
-      bottom: -14%;
-      right: -7%;
-      background-color: #92140C;
-    }
-
-    .rochelle {
-      background-image: url("../../images/rochelle.jpg");
-      background-size: cover;
-      border-radius: 50%;
-      margin-left: 50px;
-      margin-right: 50px;
-    }
+.rochelle {
+  background-image: url("../../images/rochelle.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  margin-left: 40px;
+  margin-right: 40px;
+}
 
 
-    .rochelle::after {
-      content: "";
-      width: 110%;
-      height: 2%;
-      position: absolute;
-      bottom: -14%;
-      right: -7%;
-      background-color: #264653;
-    }
+.rochelle::after {
+  content: "";
+  width: 110%;
+  height: 2%;
+  position: absolute;
+  bottom: -14%;
+  right: -7%;
+  background-color: #264653;
+}
 
-    .siobhan{
-      background-image: url("../../images/siobhan.jpg");
-      background-size: cover;
-      border-radius: 50%;
-      margin-left: 50px;
-      margin-right: 50px;
-    }
+.karolina{
+  background-image: url("../../images/karolina.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.karolina::after {
+  content: "";
+  width: 110%;
+  height: 2%;
+  position: absolute;
+  bottom: -14%;
+  right: -7%;
+  background-color: #264653;
+}
+
+.siobhan{
+  background-image: url("../../images/siobhan.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  margin-left: 40px;
+  margin-right: 40px;
+}
 
 
-    .siobhan::after {
-      content: "";
-      width: 110%;
-      height: 2%;
-      position: absolute;
-      bottom: -14%;
-      right: -7%;
-      background-color: #FFA630;
-    }
-
-    .karolina{
-      background-image: url("../../images/karolina.jpg");
-      background-size: cover;
-      border-radius: 50%;
-      margin-left: 50px;
-      margin-right: 50px;
-    }
-
-    .karolina::after {
-      content: "";
-      width: 110%;
-      height: 2%;
-      position: absolute;
-      bottom: -14%;
-      right: -7%;
-      background-color: #F6D8AE;
-    }
+.siobhan::after {
+  content: "";
+  width: 110%;
+  height: 2%;
+  position: absolute;
+  bottom: -14%;
+  right: -7%;
+  background-color: #264653;
+}
 
   /*footer*/
 
-  footer {
-    height: 150px;
-    background-color: #264653;
-  }
+footer {
+  height: 150px;
+  background-color: #264653;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 
-  div.links {
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-  }
+div.links {
+  width: 100%;
+  text-align: center;
+}
 
-  footer h2 {
-    color: white;
-    font-size: 2.2rem;
-    text-align: center;
-    font-family: 'Gloria Hallelujah', cursive;
-    padding-top: 30px;
-  }
+footer h2 {
+  color: white;
+  font-size: 2.2rem;
+  text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
+  padding-top: 30px;
+  margin-top: 0;
+}
 
-  footer a {
-     padding: 0 15px;
-     font-size: 1.1rem;
-     letter-spacing: 1px;
-  }
+footer a {
+   padding: 0 15px;
+   font-size: 1.1rem;
+   letter-spacing: 1px;
+}

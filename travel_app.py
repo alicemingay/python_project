@@ -82,6 +82,13 @@ def send_email(email_recipient, email_content):
               "subject": "Your Destination ? Search Results",
               "text": email_content})
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/further_info")
+def further_info():
+    return render_template("further.html")
 
 @app.route("/contact")
 def contact():
