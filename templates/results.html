@@ -42,37 +42,114 @@
     <section method="get" action="/results">
       <p>Startpoint: {{ R2R_categories.start_point }}</p>
       <p>Endpoint: {{ R2R_categories.end_point }}</p>
+        <br>
       <p>Route 1: {{ R2R_categories.route_0_name }} from {{ R2R_categories.route_0_arrPlace }} to {{ R2R_categories.route_0_depPlace }}</p>
       <p>Duration: {{ R2R_categories.route_0_totalDuration }} minutes</p>
       <p>Distance: {{ R2R_categories.route_0_distance }}</p>
       <p>Booking link: {{ R2R_categories.route_0_url }}</p>
       <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
         <br>
-      <p>Route 1: {{ R2R_categories.route_0_full }}</p>
+      <p>Route 2: {{ R2R_categories.route_1_name }} from {{ R2R_categories.route_1_arrPlace }} to {{ R2R_categories.route_1_depPlace }}</p>
+      <p>Duration: {{ R2R_categories.route_1_totalDuration }} minutes</p>
+      <p>Distance: {{ R2R_categories.route_1_distance }}</p>
+      <p>Booking link: {{ R2R_categories.route_1_url }}</p>
+      <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
+        <br>
+      <p>Route 3: {{ R2R_categories.route_2_name }} from {{ R2R_categories.route_2_arrPlace }} to {{ R2R_categories.route_2_depPlace }}</p>
+      <p>Duration: {{ R2R_categories.route_2_totalDuration }} minutes</p>
+      <p>Distance: {{ R2R_categories.route_2_distance }}</p>
+      <p>Booking link: {{ R2R_categories.route_2_url }}</p>
+      <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
+        <br>
+      <p>Route 4: {{ R2R_categories.route_3_name }} from {{ R2R_categories.route_3_arrPlace }} to {{ R2R_categories.route_3_depPlace }}</p>
+      <p>Duration: {{ R2R_categories.route_3_totalDuration }} minutes</p>
+      <p>Distance: {{ R2R_categories.route_3_distance }}</p>
+      <p>Booking link: {{ R2R_categories.route_3_url }}</p>
+      <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
+        <br>
     </section>
 </div>
 
-<!--Things to do-->
-<div class="things-to-do">
-  <h1>Places to eat in {{ R2R_categories.end_point }}</h1>
-    <div class="lastminute" method="get" action="/lastminute">
-      <p>{{ test }}</p>
-      <p>{{ zomatoRestaurants.option_0 }}
+<!--Things to eat-->
+<div class="things-to-eat">
+  <h1 id="Restaurant_subtitle">Places to eat in {{ R2R_categories.end_point }}</h1>
+    <div name="zomato" method="post" action="/email" class="container">
+      <div class="row">
+      <div class="col-sm-3">
+        <div class="zom_class" id="zom0">
+          <p>{{ zomatoRestaurants.option_0_name }}</p>
+          <p>Cuisine: {{ zomatoRestaurants.option_0_cuisine }}</p>
+          <p>Address: {{ zomatoRestaurants.option_0_address }}</p>
+          <p>More Info: {{ zomatoRestaurants.option_0_more }}</p>
+        </div>
+          <br>
+        <div class="zom_class" id="zom1">
+          <p>{{ zomatoRestaurants.option_1_name }}</p>
+          <p>Cuisine: {{ zomatoRestaurants.option_1_cuisine }}</p>
+          <p>Address: {{ zomatoRestaurants.option_1_address }}</p>
+          <p>More Info: {{ zomatoRestaurants.option_1_more }}</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="zom_class" id="zom2">
+          <p>{{ zomatoRestaurants.option_2_name }}</p>
+          <p>Cuisine: {{ zomatoRestaurants.option_2_cuisine }}</p>
+          <p>Address: {{ zomatoRestaurants.option_2_address }}</p>
+          <p>More Info: {{ zomatoRestaurants.option_2_more }}</p>
+        </div>
+          <br>
+        <div class="zom_class" id="zom3">
+          <p>{{ zomatoRestaurants.option_3_name }}</p>
+          <p>Cuisine: {{ zomatoRestaurants.option_3_cuisine }}</p>
+          <p>Address: {{ zomatoRestaurants.option_3_address }}</p>
+          <p>More Info: {{ zomatoRestaurants.option_3_more }}</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="zom_class" id="zom4">
+          <p>{{ zomatoRestaurants.option_4_name }}</p>
+          <p>Cuisine: {{ zomatoRestaurants.option_4_cuisine }}</p>
+          <p>Address: {{ zomatoRestaurants.option_4_address }}</p>
+          <p>More Info: {{ zomatoRestaurants.option_4_more }}</p>
+        </div>
+          <br>
+        <div class="zom_class" id="zom5">
+          <p>{{ zomatoRestaurants.option_5_name }}</p>
+          <p>Cuisine: {{ zomatoRestaurants.option_5_cuisine }}</p>
+          <p>Address: {{ zomatoRestaurants.option_5_address }}</p>
+          <p>More Info: {{ zomatoRestaurants.option_5_more }}</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="zom_class" id="zom6">
+          <p>{{ zomatoRestaurants.option_6_name }}</p>
+          <p>Cuisine: {{ zomatoRestaurants.option_6_cuisine }}</p>
+          <p>Address: {{ zomatoRestaurants.option_6_address }}</p>
+          <p>More Info: {{ zomatoRestaurants.option_6_more }}</p>
+        </div>
+          <br>
+        <div class="zom_class" id="zom7">
+          <p>{{ zomatoRestaurants.option_7_name }}</p>
+          <p>Cuisine: {{ zomatoRestaurants.option_7_cuisine }}</p>
+          <p>Address: {{ zomatoRestaurants.option_7_address }}</p>
+          <p>More Info: {{ zomatoRestaurants.option_7_more }}</p>
+        </div>
+      </div>
+
     </div>
-</div>
+  </div>
+
+      </div>
 
 <!--Email Results-->
-<div class="email-results">
-  <h3>Email this to yourself:</h3>
-  <form method="post" action="/email">
-    <input type="email" id="email" name="email" required="required" placeholder="Email Address">
-    <input type="submit" value="Submit" id="submit-button">
-      {% if message %}
-        <ul>
-          <li>{{ message }}</li>
-        </ul>
-      {% endif %}
-  </form>
+<div class="form-jumbatron justify-content-center">
+  <div class="form-container">
+    <h2>Email these results to yourself:</h2>
+    <form method="post" action="/email">
+      <input type="email" id="email_input" name="email" required="required" placeholder="Email Address">
+      <input type="submit" value="Submit" id="search-button">
+    </form>
+  </div>
 </div>
 
 
@@ -85,9 +162,6 @@
     <a href=#><img alt="follow me on pinterest" src="https://c866088.ssl.cf3.rackcdn.com/assets/pinterest40x40.png" border=0></a>
   </div>
 </footer>
-
-
-    </div>
 
   </body>
 </html>

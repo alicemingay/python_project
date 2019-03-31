@@ -6,6 +6,10 @@
   font-family: verdana, sans-serif;
 }
 
+body {
+  background-color: #FFF8F0;
+}
+
 /* nav bar */
 .jumbotron {
     background-color: transparent;
@@ -35,7 +39,7 @@
   letter-spacing: 0.5px;
   font-weight: bold;
   text-decoration: none;
-  color: #493843;
+  color: #264653;
   padding: 10px 0;
 }
 
@@ -58,21 +62,104 @@ li.about-us {
 }
 
 h1{
-  color: #493843;
+  color: #264653;
   font-family: 'Gloria Hallelujah', cursive;
   text-align: center;
 }
 
-h3{
-  color: #493843;
+/*Zomato*/
+#Restaurant_subtitle{
+  padding: 25px;
+}
+
+.zom_class{
+  color: #FFF8F0;
+  background-color: #264653;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #264653;
+}
+
+/*email form*/
+.form-jumbotron{
+  width: 100%;
+  height: 25em;
+  display: flex;
+  flex-direction: column
+  padding: 30px;
+}
+
+.form-container{
+  width: 92.5%;
+  height: 22rem;
+  padding: 10px;
+  border: 5px solid #f4953d;
+  margin-top: 80px;
+  margin-bottom: 30px;
+  margin-left: 45px;
+}
+
+h2{
+  color: #264653;
   font-family: 'Gloria Hallelujah', cursive;
   text-align: center;
+  padding-top: 25px;
+  padding-bottom: 20px;
 }
 
 form{
   text-align: center;
   margin-top: 20px;
   padding-bottom: 200px;
+}
+
+form #email_input{
+  width: 35%;
+  height: 30px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-left: 30px;
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #264653;
+}
+
+input[type="text"] {
+  width: 35%;
+  height: 60px;
+  border-style: none;
+  border: 1px solid #264653;
+  margin-right: 5px;
+  font-size: 1.4rem;
+  padding-left: 10px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 3px solid #264653;
+}
+
+::placeholder {
+  font-size: 1.6rem;
+}
+
+form #search-button {
+  width: 12%;
+  height: 30px;
+  font-size: 1.6rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-left: 30px;
+  text-transform: uppercase;
+  background-color: #264653;
+  color: white;
+  border: none;
+}
+
+form #search-button:hover {
+  cursor: pointer;
+  background-color: #f4953d;
+  color: #264653;
 }
 
 
