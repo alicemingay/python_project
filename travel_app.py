@@ -38,40 +38,13 @@ def restaurants(latitude, longitude, r):
     params = {"lat": latitude, "lon": longitude}
     req = requests.get(endpoint, headers=headers, params=params).json()
 
-    zomatoRestaurants = {
-    "option_0_name" : req["nearby_restaurants"][0]["restaurant"]["name"],
-    "option_0_cuisine" : req["nearby_restaurants"][0]["restaurant"]["cuisines"],
-    "option_0_address" : req["nearby_restaurants"][0]["restaurant"]["location"]["address"],
-    "option_0_more" : req["nearby_restaurants"][0]["restaurant"]["url"],
-    "option_1_name" : req["nearby_restaurants"][1]["restaurant"]["name"],
-    "option_1_cuisine" : req["nearby_restaurants"][1]["restaurant"]["cuisines"],
-    "option_1_address" : req["nearby_restaurants"][1]["restaurant"]["location"]["address"],
-    "option_1_more" : req["nearby_restaurants"][1]["restaurant"]["url"],
-    "option_2_name" : req["nearby_restaurants"][2]["restaurant"]["name"],
-    "option_2_cuisine" : req["nearby_restaurants"][2]["restaurant"]["cuisines"],
-    "option_2_address" : req["nearby_restaurants"][2]["restaurant"]["location"]["address"],
-    "option_2_more" : req["nearby_restaurants"][2]["restaurant"]["url"],
-    "option_3_name" : req["nearby_restaurants"][3]["restaurant"]["name"],
-    "option_3_cuisine" : req["nearby_restaurants"][3]["restaurant"]["cuisines"],
-    "option_3_address" : req["nearby_restaurants"][3]["restaurant"]["location"]["address"],
-    "option_3_more" : req["nearby_restaurants"][3]["restaurant"]["url"],
-    "option_4_name" : req["nearby_restaurants"][4]["restaurant"]["name"],
-    "option_4_cuisine" : req["nearby_restaurants"][4]["restaurant"]["cuisines"],
-    "option_4_address" : req["nearby_restaurants"][4]["restaurant"]["location"]["address"],
-    "option_4_more" : req["nearby_restaurants"][4]["restaurant"]["url"],
-    "option_5_name" : req["nearby_restaurants"][5]["restaurant"]["name"],
-    "option_5_cuisine" : req["nearby_restaurants"][5]["restaurant"]["cuisines"],
-    "option_5_address" : req["nearby_restaurants"][5]["restaurant"]["location"]["address"],
-    "option_5_more" : req["nearby_restaurants"][5]["restaurant"]["url"],
-    "option_6_name" : req["nearby_restaurants"][6]["restaurant"]["name"],
-    "option_6_cuisine" : req["nearby_restaurants"][6]["restaurant"]["cuisines"],
-    "option_6_address" : req["nearby_restaurants"][6]["restaurant"]["location"]["address"],
-    "option_6_more" : req["nearby_restaurants"][6]["restaurant"]["url"],
-    "option_7_name" : req["nearby_restaurants"][7]["restaurant"]["name"],
-    "option_7_cuisine" : req["nearby_restaurants"][7]["restaurant"]["cuisines"],
-    "option_7_address" : req["nearby_restaurants"][7]["restaurant"]["location"]["address"],
-    "option_7_more" : req["nearby_restaurants"][7]["restaurant"]["url"],
-    }
+    zomatoRestaurants = None
+
+    if "nearby_restaurants" in req:
+        zomatoRestaurants = req["nearby_restaurants"]
+
+    R2R_categories = r["routes"]
+
 
     R2R_categories = {
     "start_point" : r["places"][0]["longName"],
@@ -102,7 +75,7 @@ def restaurants(latitude, longitude, r):
     "route_3_depPlace" : r["routes"][3]["depPlace"],
     "route_3_distance" : r["routes"][3]["distance"],
     "route_3_totalDuration" : r["routes"][3]["totalDuration"],
-    "route_3_url" : r["routes"][3]["segments"][0]["agencies"][0]["links"][0]["url"],
+#    "route_3_url" : r["routes"][3]["segments"][0]["agencies"][0]["links"][0]["url"],
     }
 
     str1 = str(R2R_categories)
@@ -114,7 +87,7 @@ def restaurants(latitude, longitude, r):
 
 @app.route("/email_content", methods=["POST"])
 def content_string(str_emailContent):
-    print str_emailContent
+#    print str_emailContent
     return 1
 
 @app.route("/email", methods=["POST"])

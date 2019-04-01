@@ -45,29 +45,34 @@
       <p>Startpoint: {{ R2R_categories.start_point }}</p>
       <p>Endpoint: {{ R2R_categories.end_point }}</p>
         <br>
-      <p>Route 1: {{ R2R_categories.route_0_name }} from {{ R2R_categories.route_0_arrPlace }} to {{ R2R_categories.route_0_depPlace }}</p>
-      <p>Duration: {{ R2R_categories.route_0_totalDuration }} minutes</p>
-      <p>Distance: {{ R2R_categories.route_0_distance }}</p>
-      <p>Booking link: {{ R2R_categories.route_0_url }}</p>
-      <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
-        <br>
-      <p>Route 2: {{ R2R_categories.route_1_name }} from {{ R2R_categories.route_1_arrPlace }} to {{ R2R_categories.route_1_depPlace }}</p>
-      <p>Duration: {{ R2R_categories.route_1_totalDuration }} minutes</p>
-      <p>Distance: {{ R2R_categories.route_1_distance }}</p>
-      <p>Booking link: {{ R2R_categories.route_1_url }}</p>
-      <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
-        <br>
-      <p>Route 3: {{ R2R_categories.route_2_name }} from {{ R2R_categories.route_2_arrPlace }} to {{ R2R_categories.route_2_depPlace }}</p>
-      <p>Duration: {{ R2R_categories.route_2_totalDuration }} minutes</p>
-      <p>Distance: {{ R2R_categories.route_2_distance }}</p>
-      <p>Booking link: {{ R2R_categories.route_2_url }}</p>
-      <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
-        <br>
-      <p>Route 4: {{ R2R_categories.route_3_name }} from {{ R2R_categories.route_3_arrPlace }} to {{ R2R_categories.route_3_depPlace }}</p>
-      <p>Duration: {{ R2R_categories.route_3_totalDuration }} minutes</p>
-      <p>Distance: {{ R2R_categories.route_3_distance }}</p>
-      <p>Booking link: {{ R2R_categories.route_3_url }}</p>
-      <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
+      {% for x in R2R_categories %}
+        <div>
+          <p>{{ x["name"] }}</p>
+        </div>
+      {% endfor %}
+        <p>Route 1: {{ R2R_categories.route_0_name }} from {{ R2R_categories.route_0_arrPlace }} to {{ R2R_categories.route_0_depPlace }}</p>
+        <p>Duration: {{ R2R_categories.route_0_totalDuration }} minutes</p>
+        <p>Distance: {{ R2R_categories.route_0_distance }}</p>
+        <p>Booking link: {{ R2R_categories.route_0_url }}</p>
+        <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
+          <br>
+        <p>Route 2: {{ R2R_categories.route_1_name }} from {{ R2R_categories.route_1_arrPlace }} to {{ R2R_categories.route_1_depPlace }}</p>
+        <p>Duration: {{ R2R_categories.route_1_totalDuration }} minutes</p>
+        <p>Distance: {{ R2R_categories.route_1_distance }}</p>
+        <p>Booking link: {{ R2R_categories.route_1_url }}</p>
+        <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
+          <br>
+        <p>Route 3: {{ R2R_categories.route_2_name }} from {{ R2R_categories.route_2_arrPlace }} to {{ R2R_categories.route_2_depPlace }}</p>
+        <p>Duration: {{ R2R_categories.route_2_totalDuration }} minutes</p>
+        <p>Distance: {{ R2R_categories.route_2_distance }}</p>
+        <p>Booking link: {{ R2R_categories.route_2_url }}</p>
+        <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
+          <br>
+        <p>Route 4: {{ R2R_categories.route_3_name }} from {{ R2R_categories.route_3_arrPlace }} to {{ R2R_categories.route_3_depPlace }}</p>
+        <p>Duration: {{ R2R_categories.route_3_totalDuration }} minutes</p>
+        <p>Distance: {{ R2R_categories.route_3_distance }}</p>
+        <p>Booking link: {{ R2R_categories.route_3_url }}</p>
+        <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
         <br>
     </section>
 </div>
@@ -76,69 +81,18 @@
 <div class="things-to-eat">
   <h1 id="Restaurant_subtitle">Places to eat in {{ R2R_categories.end_point }}</h1>
     <div name="zomato" method="post" action="/email" class="container">
-      <div class="row">
-      <div class="col-sm-3">
-        <div class="zom_class" id="zom0">
-          <p>{{ zomatoRestaurants.option_0_name }}</p>
-          <p>Cuisine: {{ zomatoRestaurants.option_0_cuisine }}</p>
-          <p>Address: {{ zomatoRestaurants.option_0_address }}</p>
-          <p>More Info: {{ zomatoRestaurants.option_0_more }}</p>
+      {% if zomatoRestaurants == None %}
+        <p>I'm afraid we don't yet have data on your destination. Do send us your recommendations though as we would love to hear!</p>
+      {% else %}
+      {% for restaurant in zomatoRestaurants %}
+        <div class="zom_class">
+          <p>{{ restaurant["restaurant"]["name"] }}</p>
+          <p>Cuisine: {{ restaurant["restaurant"]["cuisines"] }}</p>
+          <p>Address: {{ restaurant["restaurant"]["location"]["address"] }}</p>
+          <p>More Info: {{ restaurant["restaurant"]["url"] }}</p>
         </div>
-          <br>
-        <div class="zom_class" id="zom1">
-          <p>{{ zomatoRestaurants.option_1_name }}</p>
-          <p>Cuisine: {{ zomatoRestaurants.option_1_cuisine }}</p>
-          <p>Address: {{ zomatoRestaurants.option_1_address }}</p>
-          <p>More Info: {{ zomatoRestaurants.option_1_more }}</p>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="zom_class" id="zom2">
-          <p>{{ zomatoRestaurants.option_2_name }}</p>
-          <p>Cuisine: {{ zomatoRestaurants.option_2_cuisine }}</p>
-          <p>Address: {{ zomatoRestaurants.option_2_address }}</p>
-          <p>More Info: {{ zomatoRestaurants.option_2_more }}</p>
-        </div>
-          <br>
-        <div class="zom_class" id="zom3">
-          <p>{{ zomatoRestaurants.option_3_name }}</p>
-          <p>Cuisine: {{ zomatoRestaurants.option_3_cuisine }}</p>
-          <p>Address: {{ zomatoRestaurants.option_3_address }}</p>
-          <p>More Info: {{ zomatoRestaurants.option_3_more }}</p>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="zom_class" id="zom4">
-          <p>{{ zomatoRestaurants.option_4_name }}</p>
-          <p>Cuisine: {{ zomatoRestaurants.option_4_cuisine }}</p>
-          <p>Address: {{ zomatoRestaurants.option_4_address }}</p>
-          <p>More Info: {{ zomatoRestaurants.option_4_more }}</p>
-        </div>
-          <br>
-        <div class="zom_class" id="zom5">
-          <p>{{ zomatoRestaurants.option_5_name }}</p>
-          <p>Cuisine: {{ zomatoRestaurants.option_5_cuisine }}</p>
-          <p>Address: {{ zomatoRestaurants.option_5_address }}</p>
-          <p>More Info: {{ zomatoRestaurants.option_5_more }}</p>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="zom_class" id="zom6">
-          <p>{{ zomatoRestaurants.option_6_name }}</p>
-          <p>Cuisine: {{ zomatoRestaurants.option_6_cuisine }}</p>
-          <p>Address: {{ zomatoRestaurants.option_6_address }}</p>
-          <p>More Info: {{ zomatoRestaurants.option_6_more }}</p>
-        </div>
-          <br>
-        <div class="zom_class" id="zom7">
-          <p>{{ zomatoRestaurants.option_7_name }}</p>
-          <p>Cuisine: {{ zomatoRestaurants.option_7_cuisine }}</p>
-          <p>Address: {{ zomatoRestaurants.option_7_address }}</p>
-          <p>More Info: {{ zomatoRestaurants.option_7_more }}</p>
-        </div>
-      </div>
-
-    </div>
+      {% endfor %}
+    {%endif%}
   </div>
 
       </div>
