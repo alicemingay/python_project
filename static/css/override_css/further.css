@@ -53,32 +53,43 @@
 }
 
 /* --- Main Area Styles --- */
-.full-page-container {
-  background-image: url('../../images/map.jpg');
+.intro {
+  background-image: url('../../images/trees.png');
   background-size: cover;
   padding: 0;
 }
 
+.container{
+  height: 55rem;
+  width: 100%;
+}
+
 .further_about {
   margin-top: -40px;
-  font-size: 7rem;
+  font-size: 6rem;
   font-weight: bold;
   color: #264653;
   font-family: 'Gloria Hallelujah', cursive;
-  margin-top: 60px;
-  margin-bottom: 80px;
-  margin-left: 40px;
-  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding-left: 45px;
+  text-align: left;
 }
 
-  .find_out {
-    font-size: 3rem;
-    color: #264653;
-    font-family: 'Gloria Hallelujah', cursive;
-    text-align: center;
-  }
+.find_out {
+  font-size: 2.2rem;
+  color: #264653;
+  font-family: 'Gloria Hallelujah', cursive;
+  padding-left: 45px;
+  text-align: left;
+}
 
  /*main page*/
+#main_info{
+  background-color: #FFF8F0;
+  height: 150rem;
+  width: 100%;
+}
 
   .res {
     padding-top: 50px;
@@ -123,20 +134,22 @@
 footer {
   height: 150px;
   background-color: #264653;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 div.links {
   width: 100%;
   text-align: center;
-  margin-top: 30px;
 }
 
-footer h2{
+footer h2 {
   color: white;
   font-size: 2.2rem;
   text-align: center;
   font-family: 'Gloria Hallelujah', cursive;
   padding-top: 30px;
+  margin-top: 0;
 }
 
 footer a {

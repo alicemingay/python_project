@@ -23,7 +23,7 @@ def journey():
 @app.route("/results", methods=["GET"])
 def getRoute(startLocation, destination):
     endpoint = "http://free.rome2rio.com/api/1.4/json/Search"
-    payload = {"key": R2R_API, "oName": startLocation, "dName": destination}
+    payload = {"key": R2R_API, "oName": startLocation, "dName": destination, 'noCar', 'noRideshare'}
     r = requests.get(endpoint, params=payload).json()
 
     latitude = r["places"][1]["lat"]
@@ -43,57 +43,20 @@ def restaurants(latitude, longitude, r):
     if "nearby_restaurants" in req:
         zomatoRestaurants = req["nearby_restaurants"]
 
-    R2R_categories = r["routes"]
-
-
-    R2R_categories = {
+    R2R_names = {
     "start_point" : r["places"][0]["longName"],
     "end_point" : r["places"][1]["longName"],
-    "route_0_name" : r["routes"][0]["name"],
-    "route_0_arrPlace" : r["routes"][0]["arrPlace"],
-    "route_0_depPlace" : r["routes"][0]["depPlace"],
-    "route_0_distance" : r["routes"][0]["distance"],
-    "route_0_totalDuration" : r["routes"][0]["totalDuration"],
-    "route_0_url" : r["routes"][0]["segments"][0]["agencies"][0]["links"][0]["url"],
-#    "route_0_currency" : r["routes"][0]["indicativePrices"][0]["nativeCurrency"],
-#    "route_0_PriceHigh" : r["routes"][0]["indicativePrices"][0]["nativePriceHigh"],
-#    "route_0_PriceLow" : r["routes"][0]["indicativePrices"][0]["nativePriceLow"],
-    "route_1_name" : r["routes"][1]["name"],
-    "route_1_arrPlace" : r["routes"][1]["arrPlace"],
-    "route_1_depPlace" : r["routes"][1]["depPlace"],
-    "route_1_distance" : r["routes"][1]["distance"],
-    "route_1_totalDuration" : r["routes"][1]["totalDuration"],
-    "route_1_url" : r["routes"][1]["segments"][0]["agencies"][0]["links"][0]["url"],
-    "route_2_name" : r["routes"][2]["name"],
-    "route_2_arrPlace" : r["routes"][2]["arrPlace"],
-    "route_2_depPlace" : r["routes"][2]["depPlace"],
-    "route_2_distance" : r["routes"][2]["distance"],
-    "route_2_totalDuration" : r["routes"][2]["totalDuration"],
-    "route_2_url" : r["routes"][2]["segments"][0]["agencies"][0]["links"][0]["url"],
-    "route_3_name" : r["routes"][3]["name"],
-    "route_3_arrPlace" : r["routes"][3]["arrPlace"],
-    "route_3_depPlace" : r["routes"][3]["depPlace"],
-    "route_3_distance" : r["routes"][3]["distance"],
-    "route_3_totalDuration" : r["routes"][3]["totalDuration"],
-#    "route_3_url" : r["routes"][3]["segments"][0]["agencies"][0]["links"][0]["url"],
+    "route_0_full" : r["routes"][0],
     }
 
-    str1 = str(R2R_categories)
-    str2 = str(zomatoRestaurants)
-    str_emailContent = str1 + str2
-    content_function = content_string(str_emailContent)
+    R2R_categories = r["routes"]
 
-    return render_template("results.html", R2R_categories=R2R_categories, zomatoRestaurants=zomatoRestaurants)
-
-@app.route("/email_content", methods=["POST"])
-def content_string(str_emailContent):
-#    print str_emailContent
-    return 1
+    return render_template("results.html", R2R_names=R2R_names, R2R_categories=R2R_categories, zomatoRestaurants=zomatoRestaurants)
 
 @app.route("/email", methods=["POST"])
 def email_address():
     email_recipient = request.form["email"]
-    email_content = "hello"
+    email_content = request.form["result0"]
     response = email_confirmation(email_recipient, email_content)
     return response
 

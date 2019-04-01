@@ -39,48 +39,28 @@
     </header>
 
 <!--Main Text-->
-<div class="search-results">
+<div class="route">
   <h1>Results of your search</h1>
-    <section method="get" action="/results">
-      <p>Startpoint: {{ R2R_categories.start_point }}</p>
-      <p>Endpoint: {{ R2R_categories.end_point }}</p>
+    <div class="route.results" method="get" action="/results">
+      <p>Startpoint: {{ R2R_names.start_point }}</p>
+      <p>Endpoint: {{ R2R_names.end_point }}</p>
+      <p>{{ R2R_names.route_0_full }}
         <br>
       {% for x in R2R_categories %}
         <div>
           <p>{{ x["name"] }}</p>
+          <p>Distance: {{ x["distance"] }}</p>
+          <p>Total Duration: {{ x["totalDuration"] }}</p>
+          <p>Booking Link: {{ x["segments"][0]["agencies"][0]["links"]["url"]}}</p>
         </div>
       {% endfor %}
-        <p>Route 1: {{ R2R_categories.route_0_name }} from {{ R2R_categories.route_0_arrPlace }} to {{ R2R_categories.route_0_depPlace }}</p>
-        <p>Duration: {{ R2R_categories.route_0_totalDuration }} minutes</p>
-        <p>Distance: {{ R2R_categories.route_0_distance }}</p>
-        <p>Booking link: {{ R2R_categories.route_0_url }}</p>
-        <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
-          <br>
-        <p>Route 2: {{ R2R_categories.route_1_name }} from {{ R2R_categories.route_1_arrPlace }} to {{ R2R_categories.route_1_depPlace }}</p>
-        <p>Duration: {{ R2R_categories.route_1_totalDuration }} minutes</p>
-        <p>Distance: {{ R2R_categories.route_1_distance }}</p>
-        <p>Booking link: {{ R2R_categories.route_1_url }}</p>
-        <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
-          <br>
-        <p>Route 3: {{ R2R_categories.route_2_name }} from {{ R2R_categories.route_2_arrPlace }} to {{ R2R_categories.route_2_depPlace }}</p>
-        <p>Duration: {{ R2R_categories.route_2_totalDuration }} minutes</p>
-        <p>Distance: {{ R2R_categories.route_2_distance }}</p>
-        <p>Booking link: {{ R2R_categories.route_2_url }}</p>
-        <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
-          <br>
-        <p>Route 4: {{ R2R_categories.route_3_name }} from {{ R2R_categories.route_3_arrPlace }} to {{ R2R_categories.route_3_depPlace }}</p>
-        <p>Duration: {{ R2R_categories.route_3_totalDuration }} minutes</p>
-        <p>Distance: {{ R2R_categories.route_3_distance }}</p>
-        <p>Booking link: {{ R2R_categories.route_3_url }}</p>
-        <p>Prices: {{ R2R_categories.route_0_currency }} {{ R2R_categories.route_0_PriceLow }} - {{ R2R_categories.route_0_PriceHigh }}</p>
-        <br>
-    </section>
+    </div>
 </div>
 
 <!--Things to eat-->
 <div class="things-to-eat">
-  <h1 id="Restaurant_subtitle">Places to eat in {{ R2R_categories.end_point }}</h1>
-    <div name="zomato" method="post" action="/email" class="container">
+  <h1 id="Restaurant_subtitle">Places to eat in {{ R2R_names.end_point }}</h1>
+    <div name="zomato" method="post" action="/results" class="container">
       {% if zomatoRestaurants == None %}
         <p>I'm afraid we don't yet have data on your destination. Do send us your recommendations though as we would love to hear!</p>
       {% else %}
@@ -89,7 +69,7 @@
           <p>{{ restaurant["restaurant"]["name"] }}</p>
           <p>Cuisine: {{ restaurant["restaurant"]["cuisines"] }}</p>
           <p>Address: {{ restaurant["restaurant"]["location"]["address"] }}</p>
-          <p>More Info: {{ restaurant["restaurant"]["url"] }}</p>
+          <a href='{{ restaurant["restaurant"]["url"] }}'>More Info</a>
         </div>
       {% endfor %}
     {%endif%}
@@ -104,6 +84,13 @@
     <form method="post" action="/email">
       <input type="email" id="email_input" name="email" required="required" placeholder="Email Address">
       <input type="submit" value="Submit" id="search-button">
+      {% if zomatoRestaurants == None %}
+        <input type="hidden" name="result0" value="I'm afraid we don't yet have data on your destination. Do send us your recommendations though as we would love to hear!" />
+      {% else %}
+        {% for restaurant in zomatoRestaurants %}
+        <input type="hidden" name="result0" value='{{ restaurant["restaurant"]["name"] }}' />
+        {% endfor %}
+      {%endif%}
     </form>
   </div>
 </div>
