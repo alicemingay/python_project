@@ -49,9 +49,8 @@
       {% for x in R2R_categories %}
         <div>
           <p>{{ x["name"] }}</p>
-          <p>Distance: {{ x["distance"] }}</p>
-          <p>Total Duration: {{ x["totalDuration"] }}</p>
-          <p>Booking Link: {{ x["segments"][0]["agencies"][0]["links"]["url"]}}</p>
+          <p>Distance: {{ x["distance"] }} km</p>
+          <p>Total Duration: {{ x["totalDuration"] }} minutes</p>
         </div>
       {% endfor %}
     </div>
@@ -62,7 +61,7 @@
   <h1 id="Restaurant_subtitle">Places to eat in {{ R2R_names.end_point }}</h1>
     <div name="zomato" method="post" action="/results" class="container">
       {% if zomatoRestaurants == None %}
-        <p>I'm afraid we don't yet have data on your destination. Do send us your recommendations though as we would love to hear!</p>
+        <p id="noneMessage">I'm afraid we don't yet have data on your destination. Do send us your recommendations though as we would love to hear!</p>
       {% else %}
       {% for restaurant in zomatoRestaurants %}
         <div class="zom_class">
@@ -80,15 +79,15 @@
 <!--Email Results-->
 <div class="form-jumbatron justify-content-center">
   <div class="form-container">
-    <h2>Email these results to yourself:</h2>
+    <h2>Email yourself these restaurants in case you want to book:</h2>
     <form method="post" action="/email">
       <input type="email" id="email_input" name="email" required="required" placeholder="Email Address">
-      <input type="submit" value="Submit" id="search-button">
+      <input type="submit" value="Submit" id="submit-button">
       {% if zomatoRestaurants == None %}
         <input type="hidden" name="result0" value="I'm afraid we don't yet have data on your destination. Do send us your recommendations though as we would love to hear!" />
       {% else %}
         {% for restaurant in zomatoRestaurants %}
-        <input type="hidden" name="result0" value='{{ restaurant["restaurant"]["name"] }}' />
+        <input type="hidden" name="result{{ loop.index }}" value='{{ restaurant["restaurant"]["name"] }}' />
         {% endfor %}
       {%endif%}
     </form>

@@ -81,6 +81,12 @@ h1{
   padding: 25px;
 }
 
+#noneMessage{
+  color: #264653;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .zom_class{
   color: #FFF8F0;
   background-color: #264653;
@@ -142,6 +148,7 @@ input[type="text"] {
   border: 1px solid #264653;
   margin-right: 5px;
   font-size: 1.4rem;
+  color: #264653;
   padding-left: 10px;
 }
 
@@ -154,7 +161,7 @@ input[type="text"]:focus {
   font-size: 1.6rem;
 }
 
-form #search-button {
+form #submit-button {
   width: 12%;
   height: 30px;
   font-size: 1.6rem;

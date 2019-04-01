@@ -23,7 +23,7 @@ def journey():
 @app.route("/results", methods=["GET"])
 def getRoute(startLocation, destination):
     endpoint = "http://free.rome2rio.com/api/1.4/json/Search"
-    payload = {"key": R2R_API, "oName": startLocation, "dName": destination, 'noCar', 'noRideshare'}
+    payload = {"key": R2R_API, "oName": startLocation, "dName": destination}
     r = requests.get(endpoint, params=payload).json()
 
     latitude = r["places"][1]["lat"]
@@ -56,7 +56,10 @@ def restaurants(latitude, longitude, r):
 @app.route("/email", methods=["POST"])
 def email_address():
     email_recipient = request.form["email"]
-    email_content = request.form["result0"]
+    email_content = ''
+    for field_name, field_value in request.form.items():
+      if field_name.startswith("result"):
+        email_content += '{}'.format(field_value)
     response = email_confirmation(email_recipient, email_content)
     return response
 
