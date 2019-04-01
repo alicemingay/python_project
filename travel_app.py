@@ -143,7 +143,7 @@ def send_email(email_recipient, email_content):
 def about():
     return render_template("about.html")
 
-@app.route("/further_info")
+@app.route("/further")
 def further_info():
     return render_template("further.html")
 
