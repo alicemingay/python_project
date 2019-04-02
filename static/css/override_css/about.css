@@ -70,14 +70,6 @@ body {
   text-align: center;
 }
 
-#main_spacing p{
-  font-weight: bold;
-  border: 2px solid red;
-  border-radius: 6px;
-  width: 50%;
-  text-align: center;
-}
-
 .container_about {
     background-color: #FFF8F0;
     background-size: cover;
@@ -92,7 +84,7 @@ body {
   }
 
 .bios{
-  height: 35rem;
+  height: 33rem;
   width: 100%;
   display: flex;
   align-items: center;

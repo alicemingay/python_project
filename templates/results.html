@@ -10,6 +10,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="../static/images/d_question.png" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css "href="../static/css/override_css/results.css">
+  <script src="../static/js/hours.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 </head>
 
@@ -39,21 +40,33 @@
     </header>
 
 <!--Main Text-->
-<div class="route">
+<div class="route_div">
   <h1>Results of your search</h1>
-    <div class="route.results" method="get" action="/results">
-      <p>Startpoint: {{ R2R_names.start_point }}</p>
-      <p>Endpoint: {{ R2R_names.end_point }}</p>
-      <p>{{ R2R_names.route_0_full }}
-        <br>
-      {% for x in R2R_categories %}
-        <div>
-          <p>{{ x["name"] }}</p>
-          <p>Distance: {{ x["distance"] }} km</p>
-          <p>Total Duration: {{ x["totalDuration"] }} minutes</p>
+    <div class="route jumbatron">
+    <div class="row">
+      <div class="route-results col-sm-6" method="get" action="/results">
+        <p>Startpoint: <b>{{ R2R_names.start_point }}</b></p>
+        <p>Endpoint: <b>{{ R2R_names.end_point }}</b></p>
+          <br>
+        {% for x in R2R_categories %}
+          <div class="routeIteration">
+            <p><b>{{ x["name"] }}</b></p>
+            <p>Distance: {{ x["distance"] }} km</p>
+            {% if x["totalDuration"] <= 59 %}
+              <p>Total Duration: {{ x["totalDuration"] }} minutes</p>
+            {% else %}
+              <p class="timeConvert">Total Duration:</p>
+            {% endif %}
+            <p>Booking Link: <a href='{{ x["segments"][0]["agencies"][0]["links"][0]["url"] }}'>{{ x["segments"][0]["agencies"][0]["links"][0]["url"] }}</a></p>
+            <p>Price Range: {{ x["indicativePrices"][0]["currency"] }} {{ x["indicativePrices"][0]["priceLow"] }}-{{ x["indicativePrices"][0]["priceHigh"] }}</p>
+          </div>
+        {% endfor %}
         </div>
-      {% endfor %}
-    </div>
+      <div class="map_pic col-sm-6">
+        <img src="../static/images/map.jpg" alt="Map" style="width:525px;height:350px;">
+        </div>
+      </div>
+  </div>
 </div>
 
 <!--Things to eat-->
@@ -65,7 +78,7 @@
       {% else %}
       {% for restaurant in zomatoRestaurants %}
         <div class="zom_class">
-          <p>{{ restaurant["restaurant"]["name"] }}</p>
+          <p id="restaurantName"><b>{{ restaurant["restaurant"]["name"] }}</b></p>
           <p>Cuisine: {{ restaurant["restaurant"]["cuisines"] }}</p>
           <p>Address: {{ restaurant["restaurant"]["location"]["address"] }}</p>
           <a href='{{ restaurant["restaurant"]["url"] }}'>More Info</a>

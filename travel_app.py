@@ -23,7 +23,7 @@ def journey():
 @app.route("/results", methods=["GET"])
 def getRoute(startLocation, destination):
     endpoint = "http://free.rome2rio.com/api/1.4/json/Search"
-    payload = {"key": R2R_API, "oName": startLocation, "dName": destination}
+    payload = {"key": R2R_API, "oName": startLocation, "dName": destination, "noCar": "True", "noRideshare": "True"}
     r = requests.get(endpoint, params=payload).json()
 
     latitude = r["places"][1]["lat"]
@@ -46,7 +46,6 @@ def restaurants(latitude, longitude, r):
     R2R_names = {
     "start_point" : r["places"][0]["longName"],
     "end_point" : r["places"][1]["longName"],
-    "route_0_full" : r["routes"][0],
     }
 
     R2R_categories = r["routes"]
