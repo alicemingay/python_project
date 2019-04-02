@@ -1,3 +1,2 @@
 flask==0.12.2
 Jinja2==2.6
-tweepy==3.7.0
