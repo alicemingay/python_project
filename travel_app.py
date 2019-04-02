@@ -2,12 +2,12 @@ from flask import Flask, render_template, request
 import requests
 
 app = Flask("app")
+port = int(os.environ.get("PORT", 5000))
 
-with open("credentials.txt","r") as file:
-    R2R_API = file.readline().split()[2]
-    MAILGUN_API = file.readline().split()[2]
-    MAILGUN_DOMAIN_NAME = file.readline().split()[2]
-    ZOMATO_API = file.readline().split()[2]
+R2R_API = os.environ.get("R2R_API", None)
+MAILGUN_API = os.environ.get("MAILGUN_API", None)
+MAILGUN_DOMAIN_NAME = os.environ.get("MAILGUN_DOMAIN_NAME", None)
+ZOMATO_API = os.environ.get("ZOMATO_API", None)
 
 @app.route("/")
 def index():
@@ -89,4 +89,4 @@ def further_info():
 def contact():
     return render_template("contact.html")
 
-app.run(debug=True)
+app.run(host='0.0.0.0', port=port, debug=True)
