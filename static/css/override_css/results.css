@@ -67,6 +67,12 @@ h1{
   text-align: center;
 }
 
+.bg_image{
+  background-image: url('../../images/huts.jpg');
+  background-size: cover;
+  padding: 0;
+}
+
 /*R2R*/
 .route-results{
   font-family: 'Open Sans', sans-serif;
@@ -80,9 +86,11 @@ h1{
   padding-bottom: 10px;
 }
 
-.map_pic{
-  align-items: center;
+.info{
+  text-align: center;
   margin-top: 40px;
+  font-family: 'Open Sans', sans-serif;
+  color:  #264653;
 }
 
 /*Zomato*/
