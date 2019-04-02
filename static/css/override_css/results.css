@@ -67,7 +67,7 @@ h1{
   text-align: center;
 }
 
-.bg_image{
+.bg_image {
   background-image: url('../../images/huts.jpg');
   background-size: cover;
   padding: 0;
@@ -79,7 +79,7 @@ h1{
   width: 50%;
   text-align: left;
   color:  #264653;
-  padding-left: 30px;
+  padding-left: 50px;
 }
 
 .routeIteration{
@@ -112,7 +112,8 @@ h1{
   font-family: 'Open Sans', sans-serif;
   font-size: 1.4rem;
   text-align: center;
-  border-bottom: 1px solid #FFF8F0;
+  border-bottom: 2px solid #FFF8F0;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
