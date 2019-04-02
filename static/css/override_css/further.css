@@ -83,44 +83,99 @@
   text-align: left;
 }
 
+.arrow {
+  width: 30px;
+  height: 30px;
+  border-top: 6px solid #264653;
+  border-left: 6px solid #264653;
+  transform: rotate(225deg);
+  margin: 60px auto 20px auto;
+}
+
  /*main page*/
 #main_info{
   background-color: #FFF8F0;
-  height: 150rem;
+  height: 120rem;
   width: 100%;
 }
 
-  .res {
-    padding-top: 50px;
-    padding-bottom: 400px;
-    align-items: center;
-    text-align: center;
-  }
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #264653;
+  border-style: solid none;
+  border-width: 2px 0;
+  margin-left: 40px;
+  margin-right: 40px;
+}
 
-   div.gallery {
-    margin: 5px;
-    border: 1px solid #;
-    float: left;
-    width: 180px;
-    margin-left: 90px;
-    margin-right: 90px;
-  }
+h2{
+  font-size: 2.2rem;
+  color: #264653;
+  font-family: 'Gloria Hallelujah', cursive;
+  padding-left: 45px;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
 
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
+h3{
+  font-size: 1.8rem;
+  color: #264653;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+  font-weight: bold;
+}
 
-  div.gallery img {
-    width: 100%;
-    height: auto;
-  }
+.row{
+  align-items: center;
+  margin: 0;
+}
 
-  div.desc {
-    padding: 15px;
-    text-align: center;
-  }
+.row p{
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  color: #264653;
+}
 
-  .desc {
+.resources{
+    height: 50px;
+    weight: auto;
+    border-style: none;
+}
+
+.img-thumbnail {
+    padding: 0;
+}
+
+ div.gallery {
+  margin: 5px;
+  border: 1px solid #;
+  float: left;
+  width: 180px;
+  margin-left: 90px;
+  margin-right: 90px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.desc {
   font-family: 'Gloria Hallelujah', cursive;
   color: #264653;
   font-weight: bold;
@@ -153,7 +208,7 @@ footer h2 {
 }
 
 footer a {
-   padding: 0 15px;
-   font-size: 1.1rem;
-   letter-spacing: 1px;
+ padding: 0 15px;
+ font-size: 1.1rem;
+ letter-spacing: 1px;
 }

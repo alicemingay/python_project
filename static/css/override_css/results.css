@@ -68,7 +68,7 @@ h1{
 }
 
 .bg_image {
-  background-image: url('../../images/huts.jpg');
+  background-image: url('../../images/huts.png');
   background-size: cover;
   padding: 0;
 }
