@@ -88,6 +88,7 @@ h1{
 
 .info{
   text-align: center;
+  align-items: center;
   padding-top: 40px;
   font-family: 'Open Sans', sans-serif;
   color:  #264653;
@@ -95,14 +96,15 @@ h1{
 
 .info img{
   border: 5px solid #f4953d;
-  margin-bottom: 40px;
 }
 
 .info p{
+  width: 60%;
   border: 2px solid #f4953d;
   padding: 10px;
   margin-top: 40px;
   margin-bottom: 40px;
+  margin-left: 115px;
 }
 
 /*Zomato*/
