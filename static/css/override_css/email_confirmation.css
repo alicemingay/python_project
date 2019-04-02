@@ -112,20 +112,22 @@ p {
 footer {
   height: 150px;
   background-color: #264653;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 div.links {
   width: 100%;
   text-align: center;
-  margin-top: 30px;
 }
 
-footer h2{
+footer h2 {
   color: white;
   font-size: 2.2rem;
   text-align: center;
   font-family: 'Gloria Hallelujah', cursive;
   padding-top: 30px;
+  margin-top: 0;
 }
 
 footer a {

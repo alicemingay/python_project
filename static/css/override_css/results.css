@@ -17,11 +17,11 @@ body {
 
 .nav-item{
   color: #264653;
-  font-family: 'Open Sans', sans-serif;
 }
 
 .navigation {
   width: 100%;
+  padding-bottom: 0;
 }
 
 .navigation ul{
@@ -32,26 +32,26 @@ body {
 
 .navigation li {
   list-style: none;
-  padding: 25px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 25px;
 }
 
 .navigation li a {
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   font-weight: bold;
+  font-size: 1.6rem;
   text-decoration: none;
   color: #264653;
   padding: 10px 0;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .navigation a:hover {
   color: #e8811f;
   border-bottom: 3px solid #ef7f15;
   cursor: pointer;
-}
-
-
-li.about-us {
-  margin-right: 25px;
 }
 
 /* --- Main Area Styles --- */
@@ -198,7 +198,6 @@ form #search-button:hover {
 /*footer*/
 
 footer {
-  width: 100%;
   margin-top: 100px;
   height: 150px;
   background-color: #264653;
@@ -207,12 +206,12 @@ footer {
 div.links {
   width: 100%;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 footer h2{
   color: white;
-  font-size: 2rem;
+  font-size: 2.2rem;
   text-align: center;
   font-family: 'Gloria Hallelujah', cursive;
   padding-top: 30px;
