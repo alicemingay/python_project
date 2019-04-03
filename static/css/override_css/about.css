@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #FFF8F0;
+  background-color: #CCD7E4;
 }
 
 /* --- Navigation Styles */
@@ -71,7 +71,7 @@ body {
 }
 
 .container_about {
-    background-color: #FFF8F0;
+    background-image: linear-gradient(#CCD7E4, #FFF8F0);
     background-size: cover;
     height: 90vh;
     width: 100%;
