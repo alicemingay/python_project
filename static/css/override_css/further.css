@@ -136,6 +136,12 @@ h3{
   margin: 0;
 }
 
+.row img{
+  align-items: center;
+  text-align: center;
+  align-content: center;
+}
+
 .row p{
   font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
@@ -144,43 +150,14 @@ h3{
 
 .resources{
     height: 50px;
-    weight: auto;
-    border-style: none;
+    border: none;
+    padding: 0;
+    margin: auto;
+    display: block;
 }
 
 .img-thumbnail {
-    padding: 0;
-}
-
- div.gallery {
-  margin: 5px;
-  border: 1px solid #;
-  float: left;
-  width: 180px;
-  margin-left: 90px;
-  margin-right: 90px;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-
-.desc {
-  font-family: 'Gloria Hallelujah', cursive;
-  color: #264653;
-  font-weight: bold;
-  font-size: 3rem;
-  text-align: center;
+    border-style: none;
 }
 
 /*footer*/
