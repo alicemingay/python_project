@@ -76,8 +76,8 @@ def send_email(email_recipient, email_content):
         data={"from": "Destination ? <mailgun@"+ MAILGUN_DOMAIN_NAME +">",
               "to": [email_recipient],
               "subject": "Your Destination ? Search Results",
-              "text": email_content})
-        verify=False
+              "text": email_content},
+        verify=False)
 
 @app.route("/about")
 def about():
