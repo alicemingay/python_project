@@ -53,11 +53,7 @@
           <div class="routeIteration">
             <p><b>{{ x["name"] }}</b></p>
             <p>Distance: {{ x["distance"] }} km</p>
-            {% if x["totalDuration"] <= 59 %}
-              <p>Total Duration: {{ x["totalDuration"] }} minutes</p>
-            {% else %}
-              <p class="timeConvert">Total Duration:</p>
-            {% endif %}
+            <p>Total Duration: {{ x["totalDuration"] }} minutes</p>
             <p>Booking Link: <a href='{{ x["segments"][0]["agencies"][0]["links"][0]["url"] }}'>{{ x["segments"][0]["agencies"][0]["links"][0]["url"] }}</a></p>
             <p>Price Range: {{ x["indicativePrices"][0]["currency"] }} {{ x["indicativePrices"][0]["priceLow"] }}-{{ x["indicativePrices"][0]["priceHigh"] }}</p>
           </div>
